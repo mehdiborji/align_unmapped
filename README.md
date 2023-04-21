@@ -21,7 +21,8 @@ Subsequently the aligned reads to this new reference are extracted using [pysam]
 
 Lastly `pysam` is used again to sweep accorss the intial unmapped BAM which contains the metadata for these reads (such as barcode and UMI). Now we can quantify the metagenomic reads at bead/cell and UMI level. With this information one can construct a new count matrix of aligned reads to the metagenomics transcriptome.
 
-Other software requirements:
+Other major software requirements:
+
 [SAMtools](http://www.htslib.org/download/) is used for sorting and indexing BAM files
 
 [pigz](https://zlib.net/pigz/) is used for compressing fastq files.
