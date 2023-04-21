@@ -17,6 +17,14 @@ Scripts `align_one.sh` makes the custom reference and performs alignment using [
 
 STAR is recommended for short spliced rna-seq reads. In most cases minimap2 makes more sense for bacterial and viral reads.
 
-Subsequently the aligned reads to this new reference are extracted using [pysam] (https://github.com/pysam-developers/pysam). One can perform some quality controls on the alignments at this step. For exmample alignments scores, mismatch rates and reference positions can help to remove some of the non-specific reads. One major problem for metagenomic references is abundance of low-complexity sequences or contaminantations in the assemblies. Such regions ususally will cause false positives in a clustered fashion where a small region of 100nt or less will have all have many reads mapped to them. One improvement of this pipeline is to indentify such clustered alignments of remove them.
+Subsequently the aligned reads to this new reference are extracted using [pysam](https://github.com/pysam-developers/pysam). One can perform some quality controls on the alignments at this step. For exmample alignments scores, mismatch rates and reference positions can help to remove some of the non-specific reads. One major problem for metagenomic references is abundance of low-complexity sequences or contaminantations in the assemblies. Such regions ususally will cause false positives in a clustered fashion where a small region of 100nt or less will have all have many reads mapped to them. One improvement of this pipeline is to indentify such clustered alignments of remove them.
 
 Lastly `pysam` is used again to sweep accorss the intial unmapped BAM which contains the metadata for these reads (such as barcode and UMI). Now we can quantify the metagenomic reads at bead/cell and UMI level. With this information one can construct a new count matrix of aligned reads to the metagenomics transcriptome.
+
+Other software requirements:
+[SAMtools](http://www.htslib.org/download/) is used for sorting and indexing BAM files
+
+[pigz](https://zlib.net/pigz/) is used for compressing fastq files.
+
+[scanpy](https://github.com/scverse/scanpy) is used for storing AnnData count matrices of rna-seq data and unmapped sequences (one `var` for each reference sequence)
+
