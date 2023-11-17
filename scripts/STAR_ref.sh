@@ -15,7 +15,7 @@ echo $genome_dir
 STAR \
 --runMode genomeGenerate \
 --runThreadN 16 \
---genomeSAindexNbases 13 \
+--genomeSAindexNbases 5 \
 --genomeDir $2 \
 --genomeFastaFiles $1
 

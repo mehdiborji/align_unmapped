@@ -1,0 +1,11 @@
+/n/scratch3/users/m/meb521/slide-seq_Eren/2023-02-24_Puck_221130_07/Puck_221130_07.matched_unmapped.fastq.gz
+/home/meb521/refs/flu/
+/n/scratch3/users/m/meb521/slide-seq_Eren/2023-02-24_Puck_221130_07/Puck_221130_07.matched_flu_mapped
+	STAR --runThreadN 16 --readFilesIn /n/scratch3/users/m/meb521/slide-seq_Eren/2023-02-24_Puck_221130_07/Puck_221130_07.matched_unmapped.fastq.gz --alignIntronMax 1 --outFilterScoreMin 30 --genomeDir /home/meb521/refs/flu/ --outFileNamePrefix /n/scratch3/users/m/meb521/slide-seq_Eren/2023-02-24_Puck_221130_07/Puck_221130_07.matched_flu_mapped --readFilesCommand zcat
+	STAR version: 2.7.10a   compiled: 2022-05-07T11:42:06-0400 login03.o2.rc.hms.harvard.edu:/home/meb521/STAR-2.7.10a/source
+Nov 17 15:55:37 ..... started STAR run
+Nov 17 15:55:37 ..... loading genome
+Nov 17 15:55:37 ..... started mapping
+Nov 17 15:56:21 ..... finished mapping
+Nov 17 15:56:21 ..... finished successfully
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
